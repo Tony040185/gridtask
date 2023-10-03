@@ -1,0 +1,145 @@
+html{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;    
+}
+
+body { 
+    min-height: 100vh; 
+    
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(150px 1fr 1fr 1fr 1fr 1fr);
+    gap: 5px 0px;    
+    grid-template-areas:
+      "header"
+      "content"
+      "content"
+      "content"
+      "content"
+      "footer";
+}
+
+body>*{
+    background-color: rgb(215, 211, 211);
+    border: 5px ridge white; 
+}
+  
+.header {    
+    display: flex;
+    padding: 50px 0px 50px 30px;
+    justify-content: space-between;    
+    grid-column: span 1;
+    grid-row: 1/2;        
+    grid-area: header; 
+}
+
+ul{
+    width: 350px;
+    display: flex;
+    justify-content: space-around;    
+}
+
+li{
+    font-size: 20px;
+}
+
+.nav{    
+    text-decoration: none;
+    list-style: none;
+    color: black;    
+}
+
+.nav:hover{
+    color: red;
+    font-weight: bold;
+}
+
+  
+.content {       
+    grid-area: content;  
+}
+
+.content{    
+    display: grid;
+    padding: 35px;
+    grid-template-columns: repeat(3, 1fr);  
+    grid-auto-flow: dense;
+    align-items: center;    
+    gap: 35px;
+}
+
+@media (max-width: 774px){
+    .content{    
+        display: flex;
+        flex-direction: column;
+        padding: 35px;
+       
+    }
+
+    .header {    
+        display: flex;
+        flex-direction: column;              
+      
+    }
+
+    ul{        
+        display: flex;
+        flex-direction: column;         
+    }
+}
+
+.content .celda:nth-child(1){
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.content .celda:nth-child(4){
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.content .celda:nth-child(6){
+    grid-column: span 2;
+    grid-row: span 2;
+}
+img{
+    width: 100%;
+    border: 10px solid rgb(137, 137, 244, .3);
+    filter: drop-shadow(10px 10px 10px grey);
+    
+}
+
+.imagen:hover{
+    transform: scale(1.1);
+    transition: all .3s;
+    border: 5px solid lightblue;
+}
+  
+.footer {     
+    grid-area: footer; 
+}
+
+.social{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons{
+    display: flex;
+}
+
+.icon{
+    width: 2vw;
+    margin: 2px;
+}
+.icon:hover{
+    transform:  scale(1.1);
+    transition: all .3s;
+}
+  
